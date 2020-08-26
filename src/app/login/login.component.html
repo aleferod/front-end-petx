@@ -8,17 +8,16 @@
     <form >
       <div class="form-group">
  
-        <input type="email" placeholder="Usuário ou email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted"></small>
+        <input type="email" placeholder="Usuário ou email" class="form-control" id="user" name="user" aria-describedby="emailHelp">
       </div>
       <div class="form-group">
-        <input type="password"  placeholder="Senha" class="form-control" id="exampleInputPassword1">
+        <input type="password"  placeholder="Senha" class="form-control" id="password" name="password">
       </div>
       <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
+        <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
+        <label class="form-check-label" for="rememberCheck">Lembrar-me</label>
       </div>
-      <button type="submit" class="btn btn-success btn-lg btn-block">Acessar</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" onclick="">Acessar</button>
       
     </form>
 
@@ -27,7 +26,7 @@
 
       <br>
     <div class="row">
-      <button type="submit" class="btn btn-primary center">Registrar-me</button>
+      <button type="button" class="btn btn-primary center" (click)="goToRegister()">Registrar-me</button>
     </div>
   </div>
 </div>
