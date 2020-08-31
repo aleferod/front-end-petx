@@ -4,7 +4,7 @@
     </a>
 
     <form class="form-inline my-2 my-lg-0 button-right">
-      <button class="style-button" type="submit">Publicar</button>
+      <button class="btn btn-success" type="submit">Publicar</button>
     </form>
   </nav>
 
@@ -18,42 +18,42 @@
 
 <div class="card card-widescreen">
   <div class="card-body">
-    <form >
+    <form #searchForm = "ngForm" (ngSubmit) = "search(searchForm.value)" >
       <div class="row">
         <div class="col">
-          <select id="especie" class="form-control">
-            <option selected>Procuro por um...</option>
-            <option>Gato</option>
-            <option>Cachorro</option>
-            <option>Outro</option>
+          <label for="especie">Procuro por um...</label>
+          <select id="especie" class="form-control" name="especie"   ngModel >
+            <option value="gato">Gato</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="outro">Outro</option>
           </select>
           <br>
-          <select id="porte" class="form-control">
-            <option selected>De porte...</option>
-            <option>Pequeno</option>
-            <option>Médio</option>
-            <option>Grande</option>
+          <label for="estado">Estado</label>
+          <select id="estado" class="form-control" name="estado"  ngModel>
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="mg">Minas Gerais</option>
           </select>
 
         </div>
         <div class="col">
-          <select id="estado" class="form-control">
-            <option selected>Estado...</option>
-            <option>São Paulo</option>
-            <option>Rio de Janeiro</option>
-            <option>Minas Gerais</option>
+          <label for="porte">De porte...</label>
+          <select id="porte" class="form-control" name="porte"  ngModel>
+            <option value="pequeno">Pequeno</option>
+            <option value="medio">Médio</option>
+            <option value="grande">Grande</option>
           </select>
           <br>
-          <select id="cidade" class="form-control">
-            <option selected>Cidade...</option>
-            <option>São Paulo</option>
-            <option>Rio de Janeiro</option>
-            <option>Belo Horizonte</option>
+          <label for="cidade">Cidade</label>
+          <select id="cidade" class="form-control"  name="cidade"  ngModel>
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="bh">Belo Horizonte</option>
           </select>
         </div>
       </div>
 <br>
-      <button type="button" class="btn btn-outline-dark btn-lg btn-block">Buscar</button>
+      <button type="submit" class="btn btn-outline-dark btn-lg btn-block" >Buscar</button>
 
     </form>
   </div>
@@ -73,9 +73,9 @@
 
         <div class="card">
           <div class="card-header">
-            Publicados recentemente.
+            Recentemente publicados
           </div>
-          <img class="card-img-top" src="../../assets/img/dog1.jpg" alt="Primeiro Slide">
+          <img class="card-img-top" src="../../assets/img/dog1.jpg" width="380" height="400" alt="Primeiro Slide">
           <div class="card-body">
             <h5 class="card-title">Título do card</h5>
             <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
@@ -88,9 +88,9 @@
 
         <div class="card">
           <div class="card-header">
-            Publicados recentemente.
+            Recentemente publicados
           </div>
-          <img class="card-img-top" src="../../assets/img/dog2.jpg" alt="Segundo Slide">
+          <img class="card-img-top" src="../../assets/img/dog2.jpg" width="380" height="400" alt="Segundo Slide">
           <div class="card-body">
             <h5 class="card-title">Título do card 2</h5>
             <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
@@ -101,11 +101,13 @@
       </div>
       <div class="carousel-item">
 
+
+
         <div class="card">
           <div class="card-header">
-            Publicados recentemente.
+            Recentemente publicados
           </div>
-          <img class="card-img-top" src="../../assets/img/dog3.jpg" alt="Terceiro Slide">
+          <img class="card-img-top" src="../../assets/img/dog3.jpg"  width="380" height="400" alt="Terceiro Slide">
           <div class="card-body">
             <h5 class="card-title">Título do card 3</h5>
             <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>

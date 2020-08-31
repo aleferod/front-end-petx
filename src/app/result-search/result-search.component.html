@@ -1,0 +1,132 @@
+<nav class="navbar navbar-light bg-white horizontal-line">
+  <a class="navbar-brand logo-left" href="#" >
+    <img src="../assets/img/petx_logo.png" width="90" height="50" alt="">
+  </a>
+
+  <form class="form-inline my-2 my-lg-0 button-right">
+    <button class="btn btn-success" type="submit">Publicar</button>
+  </form>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid center" style="background-color: white!important;">
+  <div class="container">
+    <h2 class="title-display">Encontre um novo amigo </h2>
+  </div>
+</div>
+
+
+<div class="card card-widescreen">
+<div class="card-body">
+  <form #searchForm = "ngForm" (ngSubmit) = "search(searchForm.value)" >
+    <div class="row">
+      <div class="col">
+        <label for="especie">Procuro por um...</label>
+        <select id="especie" class="form-control" name="especie"   [(ngModel)]="searchModel.especie" >
+          <option value="gato">Gato</option>
+          <option value="cachorro">Cachorro</option>
+          <option value="outro">Outro</option>
+        </select>
+        <br>
+        <label for="estado">Estado</label>
+        <select id="estado" class="form-control" name="estado"  [(ngModel)]="searchModel.estado">
+          <option value="sp">São Paulo</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="mg">Minas Gerais</option>
+        </select>
+
+      </div>
+      <div class="col">
+        <label for="porte">De porte...</label>
+        <select id="porte" class="form-control" name="porte"  [(ngModel)]="searchModel.porte">
+          <option value="pequeno">Pequeno</option>
+          <option value="medio">Médio</option>
+          <option value="grande">Grande</option>
+        </select>
+        <br>
+        <label for="cidade">Cidade</label>
+        <select id="cidade" class="form-control"  name="cidade"   [(ngModel)]="searchModel.cidade">
+          <option value="sp">São Paulo</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="bh">Belo Horizonte</option>
+        </select>
+      </div>
+    </div>
+<br>
+    <button type="submit" class="btn btn-outline-dark btn-lg btn-block" >Buscar</button>
+
+  </form>
+</div>
+</div>
+
+
+<br>
+
+<div class="container">
+<div class="card">
+  <div class="card-header">
+      Resultado da busca.
+  </div>
+</div>
+
+<div class="card-deck "> 
+
+  <div class="card">
+    <img class="card-img-top" src="../../assets/img/dog1.jpg" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Título do card</h5>
+      <p class="card-text">
+        Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.
+     
+      </p>
+    </div>
+
+    <div class="card-footer">
+      <small class="text-muted">Atualizados 3 minutos atrás</small>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="../../assets/img/dog2.jpg" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Título do card</h5>
+      <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Atualizados 3 minutos atrás</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top"src="../../assets/img/dog3.jpg" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Título do card</h5>
+      <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda maior que o primeiro, para mostrar a altura igual, em ação.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Atualizados 3 minutos atrás</small>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>

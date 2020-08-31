@@ -7,18 +7,21 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ForgotMyPasswordComponent } from './forgot-my-password/forgot-my-password.component';
 import { HomeComponent } from './home/home.component';
-
+import { ResultSearchComponent } from './result-search/result-search.component';
+import { FormsModule }   from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CreateAccountComponent,
     ForgotMyPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    ResultSearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

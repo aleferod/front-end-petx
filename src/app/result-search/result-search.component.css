@@ -1,0 +1,44 @@
+.horizontal-line{
+  width: 100%;
+  border-bottom: 1px solid #6c757d !important;
+}
+
+.logo-left{
+  padding-left: 5%;
+}
+
+.button-right{
+  padding-right: 5%;
+}
+
+.center {
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+}
+
+.card-center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.title-display{
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.carousel-buttons-style{
+  padding-bottom: 50%;
+}
+
+.card-widescreen {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: #f8f9fa!important;
+}
+
+
+
