@@ -9,6 +9,7 @@ import { ForgotMyPasswordComponent } from './forgot-my-password/forgot-my-passwo
 import { HomeComponent } from './home/home.component';
 import { ResultSearchComponent } from './result-search/result-search.component';
 import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FormsModule }   from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
