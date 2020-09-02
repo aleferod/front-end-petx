@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ResultSearchComponent } from './result-search/result-search.component';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeUserComponent } from './home-user/home-user.component';
+import { PublishComponent } from './publish/publish.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     CreateAccountComponent,
     ForgotMyPasswordComponent,
     HomeComponent,
-    ResultSearchComponent
+    ResultSearchComponent,
+    HomeUserComponent,
+    PublishComponent
   ],
   imports: [
     BrowserModule,

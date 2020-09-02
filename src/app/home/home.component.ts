@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
 
   }
 
+  publishRedirect(){
+    this.router.navigateByUrl('/login')
+  }
+
   search(data){
     console.log(data);
       this.router.navigate(['/search/', data]);

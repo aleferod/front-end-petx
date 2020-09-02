@@ -17,7 +17,7 @@
         <input type="checkbox" class="form-check-input" id="rememberCheck" name="rememberCheck">
         <label class="form-check-label" for="rememberCheck">Lembrar-me</label>
       </div>
-      <button type="submit" class="btn btn-success btn-lg btn-block" onclick="">Acessar</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" (click)="goToHomeUser()">Acessar</button>
       
     </form>
 
@@ -25,7 +25,7 @@
       <a href="/recuperar-acesso" style="text-align: center;">Recuperar acesso</a>
 
       <br>
-    <div class="row">
+    <div class="row" style="margin-top: 5%;">
       <button type="button" class="btn btn-primary center" (click)="goToRegister()">Registrar-me</button>
     </div>
   </div>
