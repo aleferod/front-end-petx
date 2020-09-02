@@ -14,11 +14,14 @@ export class HomeComponent implements OnInit {
     nome : null
   }
 
+  stateSelected: boolean = false
+
    cidades: Cidade[] = [];
 
   constructor(private router : Router, private buscadorIbgeServiceService: BuscadorIbgeServiceService) { }
 
   ngOnInit(): void {
+
   }
 
   search(data){
@@ -27,6 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   getCities(event: any){
+    this.stateSelected = true
     this.cidades = []
     this.buscadorIbgeServiceService.getCities(event.target.value).subscribe(res => {
       this.cidades = [];
