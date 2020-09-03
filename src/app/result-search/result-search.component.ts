@@ -23,6 +23,8 @@ export class ResultSearchComponent implements OnInit {
 
    cidades: Cidade[] = [];
 
+   stateSelected: boolean = false
+
   constructor(private router : Router, private activatedRouter: ActivatedRoute, private buscadorIbgeServiceService: BuscadorIbgeServiceService ) {
     const data = this.activatedRouter.snapshot.params
     this.searchModel.especie = data.especie
@@ -43,6 +45,7 @@ export class ResultSearchComponent implements OnInit {
   }
 
   getCities(event: any){
+    this.stateSelected = true
     this.cidades = []
     this.searchModel.cidade = null
     this.buscadorIbgeServiceService.getCities(event.target.value).subscribe(res => {
