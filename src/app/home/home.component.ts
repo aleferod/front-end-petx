@@ -1,13 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { BuscadorIbgeServiceService } from '../services/buscador-ibge-service.service'
-import { Cidade } from '../models/cidade'
+import { BuscadorIbgeServiceService } from '../services/buscador-ibge-service.service';
+import { Cidade } from '../models/cidade';
+import { Advert } from '../models/advert';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  advert: Advert = {
+    titulo: 'Titulo Teste',
+    descricao: null,
+    telefone: null,
+    especie: null,
+    porte: null,
+    cep: null,
+    logradouro: null,
+    numero: null,
+    complemento: null,
+    bairro: null,
+    cidade: null,
+    uf: null,
+  }
+
+  imagem : string = null
 
   cidade: Cidade = {
     id : null,
@@ -21,7 +40,8 @@ export class HomeComponent implements OnInit {
   constructor(private router : Router, private buscadorIbgeServiceService: BuscadorIbgeServiceService) { }
 
   ngOnInit(): void {
-
+  
+   console.log(this.imagem)
   }
 
   publishRedirect(){

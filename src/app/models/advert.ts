@@ -11,5 +11,5 @@ export interface Advert {
     bairro: string
     cidade: string
     uf: string
-    fotos: string[]
+  
 }

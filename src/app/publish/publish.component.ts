@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Advert } from '../models/advert';
+import { Picture } from '../models/picture';
 import { ToastrService } from 'ngx-toastr';
-
+import { AdvertService } from '../services/advert.service';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-publish',
   templateUrl: './publish.component.html',
@@ -22,12 +24,16 @@ export class PublishComponent implements OnInit {
     bairro: null,
     cidade: null,
     uf: null,
-    fotos : [null]
+  }
+
+  picture : Picture = {
+    advertId : null,
+    base64: null
   }
 
   getFiles: File[]
 
-  constructor(private toast: ToastrService) { }
+  constructor(private toast: ToastrService, private advertService: AdvertService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -45,13 +51,40 @@ export class PublishComponent implements OnInit {
         let reader = new FileReader();
         reader.readAsDataURL(this.getFiles[i]);
         reader.onload = () =>  {
-           this.advert.fotos.push(reader.result.toString()) ;
+          this.picture.advertId = 1
+          this.picture.base64 = reader.result.toString()
+          this.advertService.postPicture(this.picture).subscribe(res => {
+            console.log(res)
+          }, error => {
+            console.log(error)
+          });
         }, error => {
             console.log(error);
         }
     }
  
-     console.log(this.advert);
+    this.advert.titulo = data.titulo;
+    this.advert.descricao = data.descricao;
+    this.advert.telefone = data.telefone;
+    this.advert.especie = data.especie;
+    this.advert.porte = data.porte;
+    this.advert.cep = data.cep;
+    this.advert.logradouro = data.logradouro;
+    this.advert.numero = data.numero;
+    this.advert.complemento = data.complemento;
+    this.advert.bairro = data.bairro;
+    this.advert.cidade = data.cidade;
+    this.advert.uf = data.uf;
+    this.advertService.postAdvert(this.advert).subscribe(res => {
+          console.log(res);
+          this.toast.success('Anúncio publicado com sucesso !');
+          this.router.navigateByUrl('/home-user');
+    }, (error : string) => {
+          console.log(error);
+          this.toast.error('Não foi possível publicar o anúncio ' + error.toString() );
+         
+    });
+  
     }
 
   }
